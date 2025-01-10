@@ -1,0 +1,24 @@
+---
+interface TechItem {
+  name: string;
+  description: string;
+}
+
+const tech: TechItem[] = [
+  { name: "Microsoft 365", description: "Full tenant management" },
+  { name: "Azure/Entra ID", description: "Identity & access management" },
+  { name: "Power Automate", description: "Workflow automation" },
+  { name: "Salesforce", description: "Admin & user support" }
+];
+---
+<section class="mt-16">
+  <h2 class="text-3xl font-bold mb-8">Tools & Technologies</h2>
+  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    {tech.map(({ name, description }) => (
+      <div class="bg-gray-900/50 p-4 rounded-lg">
+        <h3 class="font-semibold mb-2">{name}</h3>
+        <p class="text-sm text-gray-400">{description}</p>
+      </div>
+    ))}
+  </div>
+</section>

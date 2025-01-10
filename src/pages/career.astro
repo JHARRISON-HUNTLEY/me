@@ -1,0 +1,56 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Header from "@/components/career/Header.astro";
+import JobCard from "@/components/career/JobCard.astro";
+import TechStack from "@/components/career/TechStack.astro";
+---
+
+<BaseLayout>
+  <main class="max-w-4xl mx-auto px-4 py-24">
+    <Header />
+    
+    <article class="space-y-16">
+      <JobCard
+        title="IT Support Specialist"
+        company="Distributed"
+        period="Nov 2023 - Present"
+        location="Remote"
+        description="Managing IT infrastructure and support for a remote-first team across multiple countries. Balancing rapid response times with systematic improvements to reduce recurring issues."
+        responsibilities={[
+          "Lead technical onboarding for new hires globally",
+          "Manage M365 tenant and Azure/Entra ID",
+          "Salesforce administration & user support",
+          "Hardware asset lifecycle management"
+        ]}
+        achievements={[
+          "Reduced ticket resolution time by 40%",
+          "Automated onboarding saving 3hrs/hire",
+          "Implemented new asset tracking system",
+          "Standardized global IT processes"
+        ]}
+      />
+
+      <JobCard
+        title="Team Leader"
+        company="Nando's"
+        period="2017 - 2023"
+        location="Newcastle"
+        description="Led high-performance teams in a fast-paced hospitality environment. Developed strong problem-solving and people management skills while maintaining exceptional customer service standards."
+        responsibilities={[
+          "Lead team of 15+ across shifts",
+          "Staff training and development",
+          "Inventory and cost control",
+          "Customer experience management"
+        ]}
+        achievements={[
+          "Employee of the Year 2022",
+          "Reduced staff turnover by 25%",
+          "Improved customer satisfaction scores",
+          "Optimized shift scheduling system"
+        ]}
+      />
+
+      <TechStack />
+    </article>
+  </main>
+</BaseLayout>
