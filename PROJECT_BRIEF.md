@@ -1,62 +1,60 @@
-# Project Brief: Jareth Harrison-Huntley Portfolio
+# Project Brief: Personal Portfolio
 
 ## The Human
 - IT Support Specialist at Distributed (Nov 2023 - Present)
-- Managing 700+ users globally
+- Enterprise Infrastructure & SaaS Management
+- Annual tools budget: £800k+, managing 300+ tools
 - Previous: 5+ years in hospitality (Nando's 2017-2023)
 - Education: BTEC Computing Science
 
 ## Core Tech Stack & Expertise
 - Microsoft 365 & Azure/Entra ID
-- Power Automate + N8N for workflow automation
+- Power Automate
 - SharePoint administration
 - Hardware asset management
-- Salesforce
-- Office 365 suite
-- Microsoft Intune
-
-## The Project
-- Personal portfolio site
-- Stack: Astro + Preact + Tailwind
-- Based on stripped Lexington theme (keeping it legal with GPL-3.0)
-
-## Current State
-- Basic structure implemented
-- Hero section with tech badges ✅
-- Simple nav & footer
-- Original template cruft removed
-- Tech stack section added (showing enterprise tools managed) ✅
-
-## Todo
-- [x] Fix badge contrast (text visibility in dark mode)
-- [x] Add tech stack section with costs
-- [ ] Build out project showcases
-- [ ] Add contact form
-- [ ] SEO optimization
-- [ ] GitHub link needs updating
+- Salesforce & HubSpot
+- Workday & Xero
+- Enterprise tool management
 
 ## Project Structure
 ```
 /
 ├── src/
 │   ├── components/
-│   │   ├── sections/     # Main page sections
-│   │   │   ├── Hero.astro
-│   │   │   ├── Experience.astro
-│   │   │   └── TechStack.astro
-│   │   └── global/      # Shared components
-│   ├── layouts/          # Base layouts
-│   └── pages/           
-│       └── index.astro   # Home page
-└── public/               # Static assets
+│   │   ├── career/                # Career page components
+│   │   │   ├── Header.astro      # Career page header
+│   │   │   ├── JobCard.astro     # Job experience cards
+│   │   │   └── TechStack.astro   # Tech stack grid
+│   │   ├── sections/             # Main components
+│   │   │   └── Hero.astro        # Homepage hero section
+│   │   └── global/               # Shared components
+│   │       ├── Navigation.astro  # Site nav
+│   │       └── Footer.astro      # Site footer
+│   ├── layouts/
+│   │   └── BaseLayout.astro      # Base page wrapper
+│   └── pages/
+│       ├── index.astro           # Homepage
+│       └── career.astro          # Career page
+├── public/
+│   └── data/
+│       └── tools-summary.json    # Tech stack data
+└── astro.config.mjs              # Base: '/me' for GitHub Pages
 ```
+
+## Key Files
+- Homepage: Clean hero with tech badges at `src/pages/index.astro`
+- Career page: Job history + Tech stack at `src/pages/career.astro`
+- Navigation: Main nav with GitHub link at `src/components/global/Navigation.astro`
+- Tools data: Live at `public/data/tools-summary.json`
+
+## Style Notes
+- Professional, not flashy
+- Dark theme throughout
+- Focus on enterprise tooling & scale
+- No software engineering claims
+- No marketing fluff
 
 ## Contact
 Email: jharrison.huntley@outlook.com
+GitHub: JHARRISON-HUNTLEY
 Location: Newcastle-Under-Lyme, ST5 9ES
-
-## Style Notes
-- Professional but with personality
-- Dark theme
-- Clean, minimal aesthetic
-- Focus on enterprise tools & scale managed

@@ -1,23 +1,66 @@
 ---
-interface TechItem {
-  name: string;
-  description: string;
+interface ToolCategory {
+  title: string;
+  tools: Array<{ name: string; description: string }>;
 }
 
-const tech: TechItem[] = [
-  { name: "Microsoft 365", description: "Full tenant management" },
-  { name: "Azure/Entra ID", description: "Identity & access management" },
-  { name: "Power Automate", description: "Workflow automation" },
-  { name: "Salesforce", description: "Admin & user support" }
+const categories: ToolCategory[] = [
+  {
+    title: "Core Infrastructure",
+    tools: [
+      { name: "Microsoft 365", description: "Full tenant management & security" },
+      { name: "Azure/Entra ID", description: "Identity & access management" },
+      { name: "SharePoint", description: "Document management & intranet" },
+      { name: "Power Automate", description: "Business process automation" }
+    ]
+  },
+  {
+    title: "Business Systems",
+    tools: [
+      { name: "Salesforce", description: "CRM administration" },
+      { name: "HubSpot", description: "Marketing automation" },
+      { name: "Workday", description: "HR systems management" },
+      { name: "Xero", description: "Finance system support" }
+    ]
+  },
+  {
+    title: "Development Tools",
+    tools: [
+      { name: "GitHub", description: "Version control & CI/CD" },
+      { name: "AWS", description: "Cloud infrastructure" },
+      { name: "MongoDB", description: "Database management" },
+      { name: "Twilio", description: "Communications API" }
+    ]
+  },
+  {
+    title: "Professional Tools",
+    tools: [
+      { name: "BambooHR", description: "HR process automation" },
+      { name: "Spendesk", description: "Expense management" },
+      { name: "Figma", description: "Design collaboration" },
+      { name: "Adobe Suite", description: "Creative tools support" }
+    ]
+  }
 ];
 ---
 <section class="mt-16">
-  <h2 class="text-3xl font-bold mb-8">Tools & Technologies</h2>
-  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-    {tech.map(({ name, description }) => (
-      <div class="bg-gray-900/50 p-4 rounded-lg">
-        <h3 class="font-semibold mb-2">{name}</h3>
-        <p class="text-sm text-gray-400">{description}</p>
+  <header class="mb-12">
+    <h2 class="text-3xl font-bold mb-4">Tools & Technologies</h2>
+    <p class="text-gray-400">Managing enterprise infrastructure worth £800k+ annually across 300+ tools</p>
+  </header>
+  
+  <div class="grid gap-8">
+    {categories.map(category => (
+      <div>
+        <h3 class="text-xl font-semibold mb-4 text-blue-400">{category.title}</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          {category.tools.map(tool => (
+            <div class="bg-gray-900/50 p-4 rounded-lg">
+              <h4 class="font-semibold mb-2">{tool.name}</h4>
+              <p class="text-sm text-gray-400">{tool.description}</p>
+            </div>
+          ))}
+        </div>
       </div>
     ))}
   </div>
