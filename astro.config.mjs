@@ -19,8 +19,7 @@ export default defineConfig({
       }
     }
   },
-  build: {
-    // Copy .nojekyll to dist
-    assets: ['.nojekyll']
-  }
+  // If you need .nojekyll, use outDir instead
+  outDir: './dist',
+  // Remove the problematic build.assets
 });
