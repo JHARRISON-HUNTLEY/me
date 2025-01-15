@@ -18,5 +18,9 @@ export default defineConfig({
         '@': path.resolve('./src')
       }
     }
+  },
+  build: {
+    // Copy .nojekyll to dist
+    assets: ['.nojekyll']
   }
 });
