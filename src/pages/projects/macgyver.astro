@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import MacGyver from '../../components/react/MacGyver';
+---
+
+<BaseLayout title="MacGyver - MacBook Serial Decoder">
+    <main class="container mx-auto px-4 py-8">
+        <div class="max-w-4xl mx-auto">
+            <header class="mb-8">
+                <h1 class="text-4xl font-bold mb-4">MacGyver</h1>
+                <p class="text-gray-400 text-lg">
+                    Decode MacBook serial numbers to reveal manufacturing details and production information.
+                </p>
+            </header>
+
+            <div class="bg-gray-900 rounded-lg p-6">
+                <MacGyver client:only="react" />
+            </div>
+
+            <section class="mt-12">
+                <h2 class="text-2xl font-semibold mb-4">About MacGyver</h2>
+                <div class="prose prose-invert">
+                    <p>
+                        MacGyver is a specialized tool for IT professionals working with Apple hardware. 
+                        It decodes MacBook serial numbers to reveal manufacturing details, helping with asset management and support.
+                    </p>
+                    <h3 class="text-xl font-semibold mt-6 mb-2">Features</h3>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>Factory location identification</li>
+                        <li>Manufacturing date parsing</li>
+                        <li>Production year and week calculation</li>
+                        <li>Proper error handling for invalid serials</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+</BaseLayout>

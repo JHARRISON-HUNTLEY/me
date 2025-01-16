@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/projects/Header.astro';
+import ProjectCard from '../components/projects/ProjectCard.astro';
+
+const projects = [
+  {
+    title: "MacGyver",
+    description: "MacBook serial number decoder that reveals manufacturing details, factory location, and production information. Built for IT asset management.",
+    tech: ["React", "Tailwind CSS", "JavaScript"],
+    href: "/me/projects/macgyver",
+    status: "live"
+  },
+  {
+    title: "DellBoy",
+    description: "This time next year, every Dell service tag will be decoded! A tool for IT pros to extract manufacturing data, factory info, and sequence numbers.",
+    tech: ["React", "Tailwind CSS", "JavaScript"],
+    href: "/me/projects/dellboy",
+    status: "live"
+  }
+];
+---
+
+<BaseLayout title="Projects | Jareth Harrison-Huntley">
+  <Header />
+  
+  <section class="mt-12 max-w-4xl mx-auto px-4">
+    <div class="grid gap-6 md:grid-cols-2">
+      {projects.map((project) => (
+        <ProjectCard {...project} />
+      ))}
+    </div>
+  </section>
+</BaseLayout>

@@ -1,12 +1,12 @@
 import { defineConfig } from 'astro/config';
-import preact from '@astrojs/preact';
+import react from '@astrojs/react';
 import tailwind from '@astrojs/tailwind';
 import icon from "astro-icon";
 import path from 'path';
 
 export default defineConfig({
   integrations: [
-    preact(),
+    react(),
     tailwind(),
     icon()
   ],
@@ -19,7 +19,5 @@ export default defineConfig({
       }
     }
   },
-  // If you need .nojekyll, use outDir instead
-  outDir: './dist',
-  // Remove the problematic build.assets
+  outDir: './dist'
 });
