@@ -1,0 +1,37 @@
+{
+  "totalTools": 307,
+  "totalYearlyCost": 806563.25,
+  "byFunction": {
+    "Central": {
+      "count": 6,
+      "tools": ["Microsoft 365", "Azure", "SharePoint"]
+    },
+    "Technology": {
+      "count": 12,
+      "tools": ["GitHub", "AWS", "Twilio", "MongoDB"]
+    },
+    "People": {
+      "count": 8,
+      "tools": ["LinkedIn", "Workday", "BambooHR"]
+    },
+    "Sales": {
+      "count": 6,
+      "tools": ["Salesforce", "HubSpot", "LinkedIn Sales Navigator"]
+    },
+    "Marketing": {
+      "count": 11,
+      "tools": ["HubSpot", "Figma", "Adobe Creative Suite"]
+    },
+    "Finance": {
+      "count": 7,
+      "tools": ["Xero", "Spendesk", "Workday"]
+    }
+  },
+  "topSpenders": [
+    {"name": "Microsoft Suite", "cost": 150000},
+    {"name": "AWS", "cost": 120000},
+    {"name": "Salesforce", "cost": 80000}
+  ],
+  "lastUpdated": "2025-01-09",
+  "totalUsers": 700
+}
