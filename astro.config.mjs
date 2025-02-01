@@ -12,10 +12,23 @@ export default defineConfig({
   ],
   site: 'https://jharrison-huntley.github.io',
   base: '/me',
+  trailingSlash: 'always',
+  build: {
+    assets: 'assets'
+  },
   vite: {
     resolve: {
       alias: {
         '@': path.resolve('./src')
+      }
+    },
+    build: {
+      rollupOptions: {
+        output: {
+          entryFileNames: 'assets/[name].[hash].js',
+          chunkFileNames: 'assets/[name].[hash].js',
+          assetFileNames: 'assets/[name].[hash][extname]'
+        }
       }
     }
   },
