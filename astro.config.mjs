@@ -12,7 +12,6 @@ export default defineConfig({
   ],
   site: 'https://jharrison-huntley.github.io',
   base: '/me',
-  trailingSlash: 'always',
   build: {
     assets: 'assets'
   },
