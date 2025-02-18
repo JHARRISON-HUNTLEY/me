@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+// Get all blog posts sorted by date
+const posts = await getCollection('blog');
+const sortedPosts = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<BaseLayout title="Blog | Jareth Harrison-Huntley" description="Random musings about enterprise IT, tool management, and the occasional 3 AM production fix">
+  <main class="max-w-4xl mx-auto px-4 py-12">
+    <h1 class="text-4xl font-bold mb-8">Blog</h1>
+    
+    <div class="grid gap-8">
+      {sortedPosts.map((post) => (
+        <article class="p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
+          <a href={`/me/blog/${post.slug}`} class="block">
+            <time datetime={post.data.pubDate.toISOString()} class="text-gray-400 text-sm">
+              {post.data.pubDate.toLocaleDateString('en-GB', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric'
+              })}
+            </time>
+            <h2 class="text-2xl font-semibold mt-2 mb-3">{post.data.title}</h2>
+            <p class="text-gray-300">{post.data.description}</p>
+            <div class="mt-4 flex gap-2">
+              {post.data.tags.map((tag: string) => (
+                <span class="px-3 py-1 bg-gray-900 text-gray-300 text-sm rounded-full">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </a>
+        </article>
+      ))}
+    </div>
+  </main>
+</BaseLayout>

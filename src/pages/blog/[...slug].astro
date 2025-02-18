@@ -1,0 +1,40 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map(post => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<BaseLayout title={`${post.data.title} | Jareth Harrison-Huntley`} description={post.data.description}>
+  <main class="max-w-3xl mx-auto px-4 py-12">
+    <article class="prose prose-invert prose-lg">
+      <header class="mb-8">
+        <time datetime={post.data.pubDate.toISOString()} class="text-gray-400 text-sm">
+          {post.data.pubDate.toLocaleDateString('en-GB', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric'
+          })}
+        </time>
+        <h1 class="text-4xl font-bold mt-2 mb-4">{post.data.title}</h1>
+        <div class="flex gap-2 mb-8">
+          {post.data.tags.map((tag: string) => (
+            <span class="px-3 py-1 bg-gray-800 text-gray-300 text-sm rounded-full">
+              {tag}
+            </span>
+          ))}
+        </div>
+      </header>
+      <Content />
+    </article>
+  </main>
+</BaseLayout>
